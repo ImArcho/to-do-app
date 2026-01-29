@@ -1,0 +1,22 @@
+---
+"on": [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v3
+
+      - name: Setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install depends
+        run: |
+          cd app
+          npm ci
+
+      - name: Run test
+        run: |
+          cd app
+          npm test
