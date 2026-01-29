@@ -19,4 +19,9 @@ jobs:
       - name: Run test
         run: |
           cd app
-          SQLITE_DB_PATH="/etc/todos/todo.db" npm test
+          export SQLITE_DB_PATH="/tmp/todos/test.db"
+          mkdir -p /tmp/todos
+          chmod 777 /tmp/todos
+
+          npm install dotenv
+          SQLITE_DB_PATH="/tmp/todos/test.db" npm test
