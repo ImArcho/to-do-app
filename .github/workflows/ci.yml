@@ -19,4 +19,4 @@ jobs:
       - name: Run test
         run: |
           cd app
-          yarn test
+          npm test
