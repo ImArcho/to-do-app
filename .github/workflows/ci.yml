@@ -19,4 +19,4 @@ jobs:
       - name: Run test
         run: |
           cd app
-          SQLITE_DB_PATH="./test.db" npm test
+          SQLITE_DB_PATH="/etc/todos/todo.db" npm test
