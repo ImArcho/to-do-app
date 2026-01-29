@@ -19,4 +19,4 @@ jobs:
       - name: Run test
         run: |
           cd app
-          npm test
+          SQLITE_DB_PATH="./test.db" npm test
