@@ -15,7 +15,7 @@ beforeEach(() => {
 });
 
 test('it initializes correctly', async () => {
-    await db.init();
+    await db.init(location);
 });
 
 test('it can store and retrieve items', async () => {
