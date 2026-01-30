@@ -20,7 +20,7 @@ jobs:
         with:
           cmd: install
 
-      - name: Test the app
+      - name: Run test
         working-directory: ./app
         env:
           SQLITE_DB_LOCATION: /tmp/todos/test.db
