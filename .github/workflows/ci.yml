@@ -20,7 +20,7 @@ jobs:
       - name: Build
         working-directory: ./app
         run: |
-          pwd
+          pwd && echo && ls -la
 
       - name: Test the app
         working-directory: ./app
