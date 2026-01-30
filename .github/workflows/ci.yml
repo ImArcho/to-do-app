@@ -1,25 +1,22 @@
----
-"on": [push]
+name: Build and Test
+
+on: [push]
+
 jobs:
   build:
-    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set Node.js 16.x
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: '18'
 
-      - name: Check available scripts
-        run: |
-          echo "=== Checking package.json scripts ==="
-          cat app/package.json | grep -A 20 '"scripts"'
-          echo "=== Package.json content ==="
-          cat app/package.json
+      - name: Create database directory
+        run: mkdir -p /tmp/todos
 
-      - name: Run install
+      - name: Install dependencies
         uses: borales/actions-yarn@v4
         with:
           cmd: install
@@ -28,10 +25,10 @@ jobs:
       - name: Build
         uses: borales/actions-yarn@v4
         with:
-          cmd: build  # Попробуйте просто build, без :prod
+          cmd: build  # или build:prod в зависимости от package.json
           dir: app
 
-      - name: Test the app
+      - name: Run tests
         uses: borales/actions-yarn@v4
         with:
           cmd: test
