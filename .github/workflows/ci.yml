@@ -13,16 +13,16 @@ jobs:
           node-version: 16.x
 
       - name: Run install
-        uses: borales/action-yarn@v4
+        uses: borales/actions-yarn@v4
         with:
           cmd: install
 
       - name: Build
-        uses: borales/action-yarn@v4
+        uses: borales/actions-yarn@v4
         with:
           cmd: build:prod
 
       - name: Test the app
-        uses: action/borales-yarn@v4
+        uses: borales/actions-yarn@v4
         with:
           cmd: test
