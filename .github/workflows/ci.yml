@@ -29,7 +29,4 @@ jobs:
       - name: Test frontend subfolder
         env:
           SQLITE_DB_LOCATION: /tmp/todos/test.db
-        run: mkdir -p /tmp/todos
-        with:
-          cmd: test
-          dir: app
+        run: mkdir -p /tmp/todos && yarn test
