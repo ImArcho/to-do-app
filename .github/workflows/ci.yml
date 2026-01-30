@@ -24,9 +24,13 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: test
+          dir: app
 
       - name: Test frontend subfolder
         uses: borales/actions-yarn@v4
+        env:
+          SQLITE_DB_LOCATION: /tmp/todos/test.db
+        run: mkdir -p /tmp/todos
         with:
           cmd: test
           dir: app
