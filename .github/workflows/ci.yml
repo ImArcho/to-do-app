@@ -13,7 +13,7 @@ jobs:
       - name: Node cache
         uses: actions/cache@v3
         with:
-          path: ./app/yarn.lock
+          path: ./app/node_modules
           key: yarn-${{ hashFiles('app/yarn.lock') }}-${{ runner.os }}
 
       - name: Setup Node.js
