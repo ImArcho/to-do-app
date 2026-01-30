@@ -20,7 +20,7 @@ jobs:
           cmd: install
 
       - name: Build
-        uses: borales/actions@v4
+        uses: borales/actions-yarn@v4
         with:
           cmd: build:prod
 
