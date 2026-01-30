@@ -1,5 +1,9 @@
 ---
-"on": [push]
+
+"on":
+  push:
+    branches: main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,4 +24,4 @@ jobs:
         run: |
           cd app
           mkdir -p /tmp/todos
-          npm test
+          yarn test
