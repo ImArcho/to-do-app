@@ -1,22 +1,31 @@
 ---
+
 "on": [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18.x
+          cache: yarn
 
-      - name: Install depends
-        working-directory: ./app
-        run: yarn install
+      - name: YARN install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
 
-      - name: Run test
-        working-directory: ./app
-        env:
-          SQLITE_DB_LOCATION: /tmp/todos/test.db
-        run: mkdir -p /tmp/todos && yarn test
+      - name: Test the app
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
+
+      - name: Test frontend subfolder
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
+          dir: app
