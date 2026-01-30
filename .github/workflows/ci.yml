@@ -11,8 +11,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 16.x
           cache: yarn
+          cache-dependency-path: 'app/yarn.lock'
 
       - name: YARN install
         uses: borales/actions-yarn@v4
