@@ -12,6 +12,13 @@ jobs:
         with:
           node-version: 16.x
 
+      - name: Check available scripts
+        run: |
+          echo "=== Checking package.json scripts ==="
+          cat app/package.json | grep -A 20 '"scripts"'
+          echo "=== Package.json content ==="
+          cat app/package.json
+
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
@@ -21,7 +28,7 @@ jobs:
       - name: Build
         uses: borales/actions-yarn@v4
         with:
-          cmd: build:prod
+          cmd: build  # Попробуйте просто build, без :prod
           dir: app
 
       - name: Test the app
