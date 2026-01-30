@@ -23,7 +23,7 @@ jobs:
       - name: Build
         uses: borales/actions-yarn@v4
         with:
-          cmd: build:proad
+          cmd: build:prod
           dir: app
 
       - name: Test the app
