@@ -27,6 +27,7 @@ jobs:
           dir: app
 
       - name: Test frontend subfolder
+        working-directory: ./app
         env:
           SQLITE_DB_LOCATION: /tmp/todos/test.db
         run: mkdir -p /tmp/todos && yarn test
