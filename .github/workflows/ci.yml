@@ -10,17 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v5
-        id: yarn-cache
+      - name: Node cache
+        uses: actions/cache@v3
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: ./app/yarn.lock
+          key: yarn-${{ hashFiles('app/yarn.lock') }}-${{ runner.os }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
