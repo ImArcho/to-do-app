@@ -4,9 +4,6 @@ jobs:
   build:
     name: Test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./
     steps:
       - uses: actions/checkout@v3
 
@@ -19,13 +16,16 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install
+          dir: app
 
       - name: Build
         uses: borales/actions-yarn@v4
         with:
           cmd: build:prod
+          dir: app
 
       - name: Test the app
         uses: borales/actions-yarn@v4
         with:
           cmd: test
+          dir: app
