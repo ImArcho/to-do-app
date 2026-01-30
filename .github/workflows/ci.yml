@@ -21,10 +21,10 @@ jobs:
           dir: app
 
       - name: Build
-        uses: borales/actions-yarn@v4
+        uses: DerYeger/yarn-setup-action@master
         with:
-          cmd: build:prod
-          dir: app
+          node-version: 16
+      - run: yarn build
 
       - name: Test the app
         working-directory: ./app
