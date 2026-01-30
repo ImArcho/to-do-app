@@ -13,7 +13,7 @@ jobs:
 
       - name: Install depends
         working-directory: ./app
-        run: yarn install --frozen-lockfile
+        run: yarn install
 
       - name: Run test
         working-directory: ./app
