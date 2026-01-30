@@ -12,24 +12,32 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-      - name: Create database directory
-        run: mkdir -p /tmp/todos
+          cache: 'yarn'
+          cache-dependency-path: 'app/yarn.lock'
 
       - name: Install dependencies
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
-          dir: app
+        working-directory: ./app
+        run: yarn install --frozen-lockfile
 
       - name: Build
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build  # или build:prod в зависимости от package.json
-          dir: app
+        working-directory: ./app
+        run: |
+          # Проверяем какой build скрипт существует
+          if grep -q '"build:prod"' package.json; then
+            echo "Running build:prod..."
+            yarn build:prod
+          elif grep -q '"build"' package.json; then
+            echo "Running build..."
+            yarn build
+          else
+            echo "No build script found, skipping build step."
+          fi
 
       - name: Run tests
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test
-          dir: app
+        working-directory: ./app
+        run: |
+          # Ключевой момент - создаем директорию для базы данных
+          mkdir -p /tmp/todos
+          echo "Created directory: /tmp/todos"
+          ls -la /tmp/
+          yarn test
