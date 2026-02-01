@@ -25,7 +25,7 @@ jobs:
         run: yarn install
 
   Test:
-    needs: Setup and install
+    needs: Setup_and_install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
