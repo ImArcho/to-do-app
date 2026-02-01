@@ -34,7 +34,6 @@ jobs:
     needs: Setup_and_test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Set up QEMU
@@ -42,3 +41,6 @@ jobs:
 
       - name: Set up buildx
         uses: docker/setup-buildx-action@v3
+
+      - name: Build image
+        run: docker build -t temmojef/myapp:V1 ./
