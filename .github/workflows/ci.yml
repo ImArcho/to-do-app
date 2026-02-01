@@ -4,7 +4,7 @@
     branches: main
 
 jobs:
-  "Install and install":
+  Install_and_install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
