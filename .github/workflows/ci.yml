@@ -33,6 +33,10 @@ jobs:
   Build_and_scan:
     needs: Setup_and_test
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
     steps:
       - uses: actions/checkout@v3
 
@@ -50,7 +54,7 @@ jobs:
         with:
           image-ref: 'temmojef/myapp:V1'
           format: 'sarif'
-          exit-code: 0
+          exit-code: 1
           severity: 'CRITICAL,HIGH'
           output: 'trivy-results.sarif'
 
