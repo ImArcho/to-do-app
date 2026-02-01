@@ -30,7 +30,7 @@ jobs:
           SQLITE_DB_LOCATION: /tmp/todos/test.db
         run: mkdir -p /tmp/todos && yarn test
 
-  Build:
+  Build_and_scan:
     needs: Setup_and_test
     runs-on: ubuntu-latest
     steps:
@@ -45,10 +45,6 @@ jobs:
       - name: Build image
         run: docker build -t temmojef/myapp:V1 ./
 
-  Scan_image:
-    needs: Build
-    runs-on: ubuntu-latest
-    steps:
       - name: Run Trivy
         uses: aquasecurity/trivy-action@0.30.0
         with:
