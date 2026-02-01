@@ -32,7 +32,7 @@ jobs:
 
   Build:
     needs: Setup_and_test
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
