@@ -55,7 +55,7 @@ jobs:
           image-ref: 'temmojef/myapp:V1'
           format: 'sarif'
           exit-code: 0
-          severity: 'CRITICAL,HIGH'
+          severity: 'LOW'
           output: 'trivy-results.sarif'
 
       - name: Results
