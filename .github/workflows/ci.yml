@@ -55,13 +55,8 @@ jobs:
           image-ref: 'temmojef/myapp:V1'
           format: 'sarif'
           exit-code: 0
+          severity: 'CRITICAL,HIGH'
           output: 'trivy-results.sarif'
-
-      - name: Show Trivy report
-        if: always()  # Запустится всегда, даже если Trivy упал
-        run: |
-          echo "=== Trivy output file ==="
-          cat trivy-results.sarif 2>/dev/null || echo "No SARIF file"
 
       - name: Results
         uses: github/codeql-action/upload-sarif@v4
