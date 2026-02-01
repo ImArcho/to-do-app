@@ -4,7 +4,7 @@
     branches: main
 
 jobs:
-  Setup_and_install:
+  Setup_and_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,20 +24,14 @@ jobs:
         working-directory: ./app
         run: yarn install
 
-  Test:
-    needs: Setup_and_install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run test
+      - name: Test
         working-directory: ./app
         env:
           SQLITE_DB_LOCATION: /tmp/todos/test.db
         run: mkdir -p /tmp/todos && yarn test
 
   Build:
-    needs: Test
+    needs: Setup_and_test
     runs-on: ubuntu:latest
     steps:
       - name: Checkout
