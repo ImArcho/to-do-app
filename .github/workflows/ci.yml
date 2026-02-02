@@ -56,7 +56,7 @@ jobs:
           format: 'sarif'
           exit-code: 1
           scanners: 'vuln'
-          ignore-unfoxed: true
+          ignore-unfixed: true
           vuln-type: 'os,libruary'
           output: 'trivy-results.sarif'
 
