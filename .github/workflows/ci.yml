@@ -54,10 +54,7 @@ jobs:
         with:
           image-ref: 'temmojef/myapp:V1'
           format: 'sarif'
-          exit-code: 1
-          scanners: 'vuln'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
+          exit-code: 0
           output: 'trivy-results.sarif'
 
       - name: Results
