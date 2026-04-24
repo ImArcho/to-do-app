@@ -6,19 +6,19 @@ metadata:
   name: to-do-app
   namespace: argocd
 
-  spec:
-    project: default
+spec:
+  project: default
 
-    source:
-     repoURL: https://github.com/ImArcho/to-do-app.git
-     targetRevision: main
-     path: manifests
+  source:
+    repoURL: https://github.com/ImArcho/to-do-app.git
+    targetRevision: main
+    path: manifests
 
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
 
-    syncPolicy:
-      automated:
-        prune: true
-        selfHeal: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
