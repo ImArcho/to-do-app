@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: to-do-app
-          image: imarcho/myapp:latest
+          image: imarcho/myapp:982c7dc588a0e269faa704290933c4c4f09adff6
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
