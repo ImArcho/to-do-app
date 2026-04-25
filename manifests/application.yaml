@@ -11,7 +11,7 @@ spec:
 
   source:
     repoURL: https://github.com/ImArcho/to-do-app.git
-    targetRevision: main
+    targetRevision: pull-model
     path: manifests
 
   destination:
