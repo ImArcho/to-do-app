@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: to-do-app
-          image: node:20-alpine
-          command: ["node"]
-          args: ["app/src/index.js"]
+          image: to-do-app:latest
+          imagePullPolicy: Never
+          command: ["node", "src/index.js"]
           ports:
           - containerPort: 3000
