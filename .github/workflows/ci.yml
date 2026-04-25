@@ -58,13 +58,13 @@ jobs:
           context: .
           push: true
           tags: |
-            temmojef/myapp:${{ github.sha }}
-            temmojef/myapp:latest
+            imarcho/myapp:${{ github.sha }}
+            imarcho/myapp:latest
 
       - name: Run Trivy
         uses: aquasecurity/trivy-action@0.30.0
         with:
-          image-ref: 'temmojef/myapp:${{ github.sha }}'
+          image-ref: 'imarcho/myapp:${{ github.sha }}'
           format: 'sarif'
           exit-code: 0
           output: 'trivy-results.sarif'
@@ -76,7 +76,7 @@ jobs:
 
       - name: Update manifest with new image tag
         run: |
-          sed -i "s|image: temmojef/myapp:.*|image: temmojef/myapp:${{ github.sha }}|g" manifests/deployment.yaml
+          sed -i "s|image: imarcho/myapp:.*|image: imarcho/myapp:${{ github.sha }}|g" manifests/deployment.yaml
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add manifests/deployment.yaml

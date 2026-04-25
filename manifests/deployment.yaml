@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: to-do-app
-          image: temmojef/myapp:latest
+          image: imarcho/myapp:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
