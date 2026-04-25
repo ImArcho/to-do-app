@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: to-do-app
-          image: to-do-app:latest
-          imagePullPolicy: Never
+          image: temmojef/myapp:v1
+          imagePullPolicy: Always
           command: ["node", "src/index.js"]
           ports:
           - containerPort: 3000

@@ -1,7 +1,7 @@
 ---
 "on":
   push:
-    branches: main
+    branches: pull-model
 
 jobs:
   Setup_and_test:
