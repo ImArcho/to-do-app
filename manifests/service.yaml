@@ -4,7 +4,7 @@ metadata:
   name: to-do-app
   namespace: default
 spec:
-  selectors:
+  selector:
     app: to-do-app
   ports:
     - port: 3000
