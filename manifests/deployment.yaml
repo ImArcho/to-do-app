@@ -6,7 +6,7 @@ metadata:
   labels:
     app: to-do-app
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: to-do-app
