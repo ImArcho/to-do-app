@@ -59,7 +59,7 @@ jobs:
           push: true
           tags: |
             imarcho/myapp:${{ github.sha }}
-            imarcho/myapp:latest
+            imarcho/myapp:V2
 
       - name: Run Trivy
         uses: aquasecurity/trivy-action@0.35.0
