@@ -1,11 +1,15 @@
 ---
 "on":
   push:
-    branches: main
+    branches: push-model
 
 jobs:
   Setup_and_test:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     steps:
       - uses: actions/checkout@v3
 
@@ -30,6 +34,25 @@ jobs:
           SQLITE_DB_LOCATION: /tmp/todos/test.db
         run: mkdir -p /tmp/todos && yarn test
 
+  Code_analysis:
+    needs: Setup_and_test
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Init CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: 'javascript'
+
+      - name: Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: "/language:javascript"
+
   Build_and_scan:
     needs: Setup_and_test
     runs-on: ubuntu-latest
@@ -37,6 +60,7 @@ jobs:
       security-events: write
       actions: read
       contents: read
+
     steps:
       - uses: actions/checkout@v3
 
@@ -47,12 +71,12 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build image
-        run: docker build -t temmojef/myapp:V1 ./
+        run: docker build -t imarcho/myapp:V1 ./
 
       - name: Run Trivy
         uses: aquasecurity/trivy-action@0.30.0
         with:
-          image-ref: 'temmojef/myapp:V1'
+          image-ref: 'imarcho/myapp:V1'
           format: 'sarif'
           exit-code: 0
           output: 'trivy-results.sarif'
@@ -61,3 +85,22 @@ jobs:
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: 'trivy-results.sarif'
+
+Deploy:
+  needs: Build_and_scan
+  runs-on: ubuntu-latest
+  permissions:
+    contents: read
+
+  steps:
+
+    - name: Set k8s
+      uses: azure/k8s-set-context@v3
+      with:
+        kubeconfig: ${{ secrets.KUBECONFIG}}
+
+    - name: Deploy to Kubernetes
+      run: |
+        kubectl set image deployment/to-do-app \
+        to-do-app=imarcho/myapp:V1 -n default
+        kubectl rollout status deployment/to-do-app -n default
