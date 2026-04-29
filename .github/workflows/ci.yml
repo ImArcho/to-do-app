@@ -86,21 +86,21 @@ jobs:
         with:
           sarif_file: 'trivy-results.sarif'
 
-Deploy:
-  needs: Build_and_scan
-  runs-on: ubuntu-latest
-  permissions:
-    contents: read
+  Deploy:
+    needs: Build_and_scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
-  steps:
+    steps:
 
-    - name: Set k8s
-      uses: azure/k8s-set-context@v3
-      with:
-        kubeconfig: ${{ secrets.KUBECONFIG}}
+      - name: Set k8s
+        uses: azure/k8s-set-context@v3
+        with:
+          kubeconfig: ${{ secrets.KUBECONFIG}}
 
-    - name: Deploy to Kubernetes
-      run: |
-        kubectl set image deployment/to-do-app \
-        to-do-app=imarcho/myapp:V1 -n default
-        kubectl rollout status deployment/to-do-app -n default
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl set image deployment/to-do-app \
+          to-do-app=imarcho/myapp:V1 -n default
+          kubectl rollout status deployment/to-do-app -n default
