@@ -74,7 +74,7 @@ jobs:
         run: docker build -t imarcho/myapp:V1 ./
 
       - name: Run Trivy
-        uses: aquasecurity/trivy-action@0.30.0
+        uses: aquasecurity/trivy-action@0.30.5
         with:
           image-ref: 'imarcho/myapp:V1'
           format: 'sarif'
