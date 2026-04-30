@@ -53,7 +53,7 @@ jobs:
         with:
           category: "javascript"
 
-  Buils_and_scan:
+  Build_and_scan:
     needs: Setup_and_test
     runs-on: ubuntu-latest
     permissions:
