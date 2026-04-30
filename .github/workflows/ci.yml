@@ -99,7 +99,7 @@ jobs:
           category: 'trivy'
 
   Deploy:
-    needs: [Build_and_scan, Code_analisys]
+    needs: [Build_and_scan, Code_analysis]
     runs-on: ubuntu-latest
     permissions:
       contents: read
