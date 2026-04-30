@@ -80,7 +80,7 @@ jobs:
         run: docker build -t imarcho/myapp:${{ github.sha }} ./
 
       - name: Run Trivy
-        uses: aquasecurity/trivy-action@0.69.3
+        uses: aquasecurity/trivy-action@0.30.0
         with:
           image-ref: 'imarcho/myapp:${{ github.sha }}'
           format: 'sarif'
