@@ -4,7 +4,7 @@
     branches: [pull-model, main]
 
 jobs:
-  Подготовка_и_тестирование:
+  'Подготовка_и_тестирование':
     runs-on: ubuntu-latest
     permissions:
       actions: read
