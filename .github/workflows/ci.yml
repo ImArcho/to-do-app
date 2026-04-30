@@ -4,7 +4,7 @@
     branches: [pull-model, main]
 
 jobs:
-  'Подготовка_и_тестирование':
+  Setup_and_test:
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -34,7 +34,7 @@ jobs:
           SQLITE_DB_LOCATION: /tmp/todos/test.db
         run: mkdir -p /tmp/todos && yarn test
 
-  Анализ_кода:
+  Code_analysis:
     runs-on: ubuntu-latest
     permissions:
       security-events: write
@@ -53,7 +53,7 @@ jobs:
         with:
           category: "javascript"
 
-  Сборка_и_сканирование:
+  Buils_and_scan:
     needs: Setup_and_test
     runs-on: ubuntu-latest
     permissions:
@@ -93,7 +93,7 @@ jobs:
           sarif_file: 'trivy-results.sarif'
           category: "trivy-${{ github.sha }}"
 
-  Развертывание:
+  Deploy:
     needs: [Build_and_scan, Code_analysis]
     runs-on: ubuntu-latest
     permissions:
