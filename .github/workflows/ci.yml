@@ -1,3 +1,4 @@
+---
 "on":
   push:
     branches: push-model
@@ -39,8 +40,10 @@ jobs:
       contents: read
       actions: read
     steps:
+      - uses: actions/checkout@v3
+
       - name: Init
-        uses: github/codeql-action/init@v4 
+        uses: github/codeql-action/init@v4
         with:
           languages: javascript-typescript
 
@@ -89,11 +92,11 @@ jobs:
           sarif_file: 'trivy-results.sarif'
           category: "trivy-${{ github.sha }}"
 
-#      - name: Results
-#        uses: github/codeql-action/upload-sarif@v4
-#        with:
-#          sarif_file: 'trivy-results.sarif'
-#          category: 'trivy'
+  #     - name: Results
+  #       uses: github/codeql-action/upload-sarif@v4
+  #       with:
+  #         sarif_file: 'trivy-results.sarif'
+  #         category: 'trivy'
 
   Deploy:
     needs: [Build_and_scan, Code_analysis]
