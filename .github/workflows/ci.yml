@@ -1,7 +1,8 @@
 ---
 "on":
   push:
-    branches: push-model
+    branches: [pull-model, main]
+
 jobs:
   Setup_and_test:
     runs-on: ubuntu-latest
