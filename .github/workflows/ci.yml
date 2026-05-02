@@ -96,7 +96,9 @@ jobs:
     needs: [Build_and_scan, Code_analysis]
     runs-on: ubuntu-latest
     permissions:
+      actions: write
       contents: read
+      security-events: write
 
     steps:
       - uses: actions/checkout@v3
