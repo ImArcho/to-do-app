@@ -108,7 +108,7 @@ jobs:
           sed -i "s|image: imarcho/myapp.*|image: imarcho/myapp:pull_v1|g" manifests/deployment.yaml
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git remote set-url  https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ImArcho/to-do-app.git
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ImArcho/to-do-app.git
           git add manifests/deployment.yaml
           git commit -m "Image updated" || echo "Image already up to date"
           git push
