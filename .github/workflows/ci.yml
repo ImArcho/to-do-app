@@ -106,7 +106,7 @@ jobs:
       - name: Update manifest with new image tag
         run: |
           sed -i "s|image: imarcho/myapp.*|image: imarcho/myapp:pull_v1|g" manifests/deployment.yaml
-          git config user.name "imarcho"
+          git config user.name "ImArcho"
           git config user.email "imarcho@yandex.ru"
           git remote set-url origin https://x-access-token:${{ secrets.SPEC_TOKEN }}@github.com/ImArcho/to-do-app.git
           git add manifests/deployment.yaml
