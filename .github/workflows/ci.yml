@@ -76,12 +76,15 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build image
-        run: docker build -t imarcho/myapp:${{ github.sha }} ./
+        run: docker build -t imarcho/myapp:pull_v1 ./
+
+      - name: Push image
+        run: docker push imarcho/myapp:pull_v1
 
       - name: Run Trivy
         uses: aquasecurity/trivy-action@0.35.0
         with:
-          image-ref: 'imarcho/myapp:${{ github.sha }}'
+          image-ref: 'imarcho/myapp:pull_v1'
           format: 'sarif'
           exit-code: 0
           output: 'trivy-results.sarif'
@@ -90,22 +93,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: 'trivy-results.sarif'
-          category: "trivy-${{ github.sha }}"
-
-  Deploy:
-    needs: [Build_and_scan, Code_analysis]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Update manifest with new image tag
-        run: |
-          sed -i "s|image: imarcho/myapp:.*|image: imarcho/myapp:${{ github.sha }}|g" manifests/deployment.yaml
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add manifests/deployment.yaml
-          git commit -m "Update image to ${{ github.sha }}" || echo "No changes to commit"
-          git push
+          category: "trivy-pull_v1"
