@@ -1,3 +1,4 @@
+---
 "on":
   push:
     branches: [pull-model, main]
@@ -53,7 +54,7 @@ jobs:
           category: "javascript"
 
   Build_and_scan:
-    needs: Setup_and_test
+    needs: [Setup_and_test, Code_analysis] 
     runs-on: ubuntu-latest
     permissions:
       actions: write
