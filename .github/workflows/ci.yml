@@ -93,29 +93,5 @@ jobs:
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: 'trivy-results.sarif'
-<<<<<<< HEAD
           category: "trivy-pull_v1"
-=======
-          category: "trivy-${{ github.sha }}"
-
-  Deploy:
-    needs: [Build_and_scan, Code_analysis]
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-      contents: read
-      security-events: write
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Update manifest with new image tag
-        run: |
-          sed -i "s|image: imarcho/myapp.*|image: imarcho/myapp:pull_v1|g" manifests/deployment.yaml
-          git config user.name "ImArcho"
-          git config user.email "imarcho@yandex.ru"
-          git remote set-url origin https://x-access-token:${{ secrets.SPEC_TOKEN }}@github.com/ImArcho/to-do-app.git
-          git add manifests/deployment.yaml
-          git commit -m "Image updated" || echo "Image already up to date"
-          git push
->>>>>>> 40429bbb8a5b9d2fe1a7798dd481365d0773dbe0
+          category: "trivy-pull_v1"
