@@ -1,0 +1,21 @@
+---
+"on":
+  push:
+    branches: main
+  
+  jobs:
+    Send_mail:
+      - name: Sending result
+        if: always()
+        uses: dawidd6/actions-send-mail@v3
+        with:
+          server-address: stmp.yandex.ru
+          server-port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASS }}
+          subject: Обновление кода
+          to: imarcho@yandex.ru
+          from: GitHub Actions
+          body: |
+            Сборка обновлена!
+            Команда GitHub Actions
