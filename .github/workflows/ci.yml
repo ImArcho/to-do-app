@@ -110,7 +110,7 @@ jobs:
       - name: Set k8s
         uses: azure/k8s-set-context@v3
         with:
-          kubeconfig: ${{ secrets.KUBECONFIG}}
+          kubeconfig: ${{ secrets.KUBECONFIG }}
 
       - name: Deploy to Kubernetes
         run: |
