@@ -112,4 +112,5 @@ jobs:
       - name: Deploy to Kubernetes
         run: |
           kubectl set image deployment/to-do-app myapp=imarcho/myapp:push_v1 -n default
+          kubectl rollout restart deployment/to-do-app -n default
           kubectl rollout status deployment/to-do-app -n default
