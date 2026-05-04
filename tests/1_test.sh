@@ -18,6 +18,18 @@ echo "Run ID: $RUN_ID"
 
 gh run watch $RUN_ID --exit-status
 
+echo "Waiting for pods to be ready..."
+sleep 30
+
+# Ждём появления подов
+while [ -z "$(kubectl get pods -l app=todo-app 2>/dev/null | grep Running)" ]; do
+    echo "Waiting for pod..."
+    sleep 5
+done
+
+# Дополнительная задержка для metrics-server
+sleep 30
+
 echo ""
 echo "=== CPU/RAM ==="
 kubectl top pod -l app=todo-app --containers
