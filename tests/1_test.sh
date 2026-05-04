@@ -2,6 +2,7 @@
 
 REPO="ImArcho/to-do-app"
 BRANCH="push-model"
+PORT=32412
 
 git add .
 git commit -m "test-$(date +%s)"
@@ -27,5 +28,5 @@ kubectl get pods -l app=todo-app -o custom-columns=NAME:.metadata.name,RESTARTS:
 
 echo ""
 echo "=== HTTP STATUS ==="
-curl -s -o /dev/null -w "HTTP %{http_code}" localhost:32412
+curl -s -o /dev/null -w "HTTP %{http_code}" localhost:$PORT
 echo ""
