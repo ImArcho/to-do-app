@@ -2,12 +2,11 @@
 
 MODEL="push"
 
-# Подготовка
 kubectl config use-context ${MODEL}-model
-kubectl delete deployment todo-app --ignore-not-found
 
+git pull --rebase
 git add .
-git commit -m "Test 1.1"
+git commit -m "auto-test-$(date +%s)"
 git push
 
 T0=$(date +%s)
