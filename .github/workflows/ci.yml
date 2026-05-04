@@ -108,7 +108,7 @@ jobs:
 
       - name: Deploy using push-latest tag
         run: |
-          kubectl set image deployment/to-do-app myapp=imarcho/myapp:${{ github.sha }} -n default
-          kubectl set image deployment/to-do-app myapp=imarcho/myapp:push-latest -n default
+          kubectl set image deployment/todo-app myapp=imarcho/myapp:${{ github.sha }} -n default
+          kubectl set image deployment/todo-app myapp=imarcho/myapp:push-latest -n default
           kubectl rollout restart deployment/to-do-app -n default
           kubectl rollout status deployment/to-do-app -n default
