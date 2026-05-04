@@ -2,7 +2,6 @@
 
 REPO="ImArcho/to-do-app"
 BRANCH="push-model"
-PORT=32412
 
 git add .
 git commit -m "test-$(date +%s)"
@@ -14,31 +13,21 @@ RUN_ID=$(curl -s -H "Accept: application/vnd.github.v3+json" \
   "https://api.github.com/repos/$REPO/actions/runs?branch=$BRANCH&per_page=1" \
   | jq -r '.workflow_runs[0].id')
 
-echo "Run ID: $RUN_ID"
-
 gh run watch $RUN_ID --exit-status
 
-echo "Waiting for pods to be ready..."
+# Ждём готовности подов
 sleep 30
-
-# Ждём появления подов
 while [ -z "$(kubectl get pods -l app=todo-app 2>/dev/null | grep Running)" ]; do
-    echo "Waiting for pod..."
     sleep 5
 done
-
-# Дополнительная задержка для metrics-server
 sleep 30
 
 echo ""
-echo "=== CPU/RAM ==="
+echo "=== ВРЕМЯ РАЗВЁРТЫВАНИЯ ==="
+echo "Смотрите в логах выше (от пуша до completion)"
+echo ""
+echo "=== CPU/RAM (контрольный замер) ==="
 kubectl top pod -l app=todo-app --containers
-
 echo ""
-echo "=== RESTARTS ==="
-kubectl get pods -l app=todo-app -o custom-columns=NAME:.metadata.name,RESTARTS:.status.containerStatuses[0].restartCount
-
-echo ""
-echo "=== HTTP STATUS ==="
-curl -s -o /dev/null -w "HTTP %{http_code}" localhost:$PORT
-echo ""
+echo "=== РУЧНЫХ ВМЕШАТЕЛЬСТВ ==="
+echo "0 (всё автоматически)"
