@@ -24,7 +24,7 @@ out_3=$(kubectl top pod -l app=todo-app --containers)
 
 gh run watch $RUN_ID --exit-status
 
-sleep 5
+sleep 10 
 
 out_4=$(kubectl top pod -l app=todo-app --containers)
 
