@@ -1,31 +1,21 @@
 #!/bin/bash
 
-MODEL="push"
-
-kubectl config use-context ${MODEL}-model
-
-git pull --rebase
 git add .
-git commit -m "auto-test-$(date +%s)"
+git commit -m "test-$(date +%s)"
 git push
 
-T0=$(date +%s)
+echo "Waiting for CI to complete..."
+gh run watch --branch push-model --repo ImArcho/to-do-app --exit-status
 
-while [ -z "$(kubectl get pods 2>/dev/null | grep Running)" ]; do
-    sleep 2
-done
+echo ""
+echo "=== CPU/RAM ==="
+kubectl top pod -l app=todo-app --containers
 
-while [ "$(curl -s -o /dev/null -w '%{http_code}' localhost:30080)" != "200" ]; do
-    sleep 2
-done
+echo ""
+echo "=== RESTARTS ==="
+kubectl get pods -l app=todo-app -o custom-columns=NAME:.metadata.name,RESTARTS:.status.containerStatuses[0].restartCount
 
-T2=$(date +%s)
-
-echo "Time: $((T2 - T0)) sec"
-
-sleep 30
-
-for i in 1 2 3; do
-    kubectl top pod -l app=todo-app --containers
-    sleep 10
-done
+echo ""
+echo "=== HTTP STATUS ==="
+curl -s -o /dev/null -w "HTTP %{http_code}" localhost:32412
+echo ""
