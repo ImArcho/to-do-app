@@ -1,11 +1,21 @@
 #!/bin/bash
 
+REPO="ImArcho/to-do-app"
+BRANCH="push-model"
+
 git add .
 git commit -m "test-$(date +%s)"
 git push
 
-echo "Waiting for CI to complete..."
-gh run watch --branch push-model --repo ImArcho/to-do-app --exit-status
+sleep 5
+
+RUN_ID=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+  "https://api.github.com/repos/$REPO/actions/runs?branch=$BRANCH&per_page=1" \
+  | jq -r '.workflow_runs[0].id')
+
+echo "Run ID: $RUN_ID"
+
+gh run watch $RUN_ID --exit-status
 
 echo ""
 echo "=== CPU/RAM ==="
