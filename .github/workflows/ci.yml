@@ -54,7 +54,7 @@ jobs:
           category: "javascript"
 
   Build_and_scan:
-    needs: [Setup_and_test, Code_analysis] 
+    needs: Setup_and_test
     runs-on: ubuntu-latest
     permissions:
       actions: write
@@ -97,7 +97,7 @@ jobs:
           category: "trivy-pull-latest"
 
   Syncronization:
-    needs: Build_and_scan
+    needs: [Build_and_scan, Code_analysis]
     runs-on: self-hosted
     steps:
       - name: ArgoCD sync
