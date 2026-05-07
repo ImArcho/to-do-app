@@ -71,10 +71,16 @@ jobs:
           password: ${{ secrets.DH_PASS }}
 
       - name: Build image
-        run: docker build -t imarcho/myapp:pull-latest ./
+        run: |
+          docker build \
+            -t imarcho/myapp:pull-latest \
+            -t imarcho/myapp:${{ github.sha }} \
+            ./
 
       - name: Push image
-        run: docker push imarcho/myapp:pull-latest
+        run: |
+          docker push imarcho/myapp:pull-latest
+          docker push imarcho/myapp:${{ github.sha }}
 
       - name: Run Trivy
         uses: aquasecurity/trivy-action@0.35.0
@@ -89,3 +95,12 @@ jobs:
         with:
           sarif_file: 'trivy-results.sarif'
           category: "trivy-pull-latest"
+
+  Syncronization:
+    needs: Build_and_scan
+    runs-on: self-hosted
+    steps:
+      - name: ArgoCD sync
+        run: |
+          kubectl patch application todo-app -n argocd --type=merge \
+          -p '{"operation":{"sync":{"revision":"pull-model"}}}'
