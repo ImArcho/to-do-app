@@ -1,0 +1,122 @@
+14:51:22
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:25
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:28
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:32
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:35
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:38
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:41
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:44
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:47
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:50
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:54
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:51:57
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:00
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:03
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:06
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:09
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:13
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:16
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:19
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:23
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:26
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:29
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:32
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:35
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:38
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:41
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:45
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:48
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:51
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:54
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:52:57
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:00
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:04
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:07
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:10
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:13
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:16
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:19
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:22
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:26
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:29
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:32
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:35
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:38
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:41
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:44
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:48
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:51
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:54
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:53:57
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:00
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:04
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:07
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:10
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:13
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:16
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:20
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:23
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:26
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:29
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   
+14:54:32
+todo-app-6f896fd896-2djs6   todo-app   1m    17Mi   

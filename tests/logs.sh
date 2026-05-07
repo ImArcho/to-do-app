@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="1.2.txt"
+FILE="1.3.txt"
 
 echo "Начало сбора метрик"
 

@@ -1,7 +1,7 @@
 body {
-    background-color: #f4f4f4;
+    background-color: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
     margin-top: 50px;
-    font-family: 'Lato';
+    font-family: 'serif';
 }
 
 .item {
