@@ -6,7 +6,7 @@ metadata:
   labels:
     app: todo-app
 spec:
-  replicas: 5
+  replicas: 1 
   selector:
     matchLabels:
       app: todo-app
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: imarcho/myapp:pull_v1
+          image: imarcho/myapp:pull-latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
