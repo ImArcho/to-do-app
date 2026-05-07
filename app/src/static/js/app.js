@@ -47,7 +47,7 @@ function TodoListCard() {
         [items],
     );
 
-    if (items === null) return 'Loading...';
+    if (items === null) return 'Загрузка...';
 
     return (
         <React.Fragment>
@@ -106,7 +106,7 @@ function AddItemForm({ onNewItem }) {
                         disabled={!newItem.length}
                         className={submitting ? 'disabled' : ''}
                     >
-                        {submitting ? 'Adding...' : 'Добавить'}
+                        {submitting ? 'Добавляем...' : 'Добавить'}
                     </Button>
                 </InputGroup.Append>
             </InputGroup>
