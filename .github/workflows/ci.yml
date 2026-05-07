@@ -77,15 +77,15 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build image
-        run: docker build -t imarcho/myapp:pull_v1 ./
+        run: docker build -t imarcho/myapp:pull-latest ./
 
       - name: Push image
-        run: docker push imarcho/myapp:pull_v1
+        run: docker push imarcho/myapp:pull-latest
 
       - name: Run Trivy
         uses: aquasecurity/trivy-action@0.35.0
         with:
-          image-ref: 'imarcho/myapp:pull_v1'
+          image-ref: 'imarcho/myapp:pull-latest'
           format: 'sarif'
           exit-code: 0
           output: 'trivy-results.sarif'
@@ -94,4 +94,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: 'trivy-results.sarif'
-          category: "trivy-pull_v1"
+          category: "trivy-pull-latest"
