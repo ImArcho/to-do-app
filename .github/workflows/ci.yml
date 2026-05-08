@@ -1,4 +1,4 @@
-
+---
 "on":
   push:
     branches: [push-model, main]
@@ -79,7 +79,7 @@ jobs:
         with:
           image-ref: 'imarcho/myapp:${{ github.sha }}'
           format: 'sarif'
-          exit-code: 0
+          exit-code: 1 
           output: 'trivy-results.sarif'
 
       - name: Push both tags to Docker Hub
