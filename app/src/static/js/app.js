@@ -47,7 +47,7 @@ function TodoListCard() {
         [items],
     );
 
-    if (items === null) return 'Загрузка';
+    if (items === null) return 'Загрузка..';
 
     return (
         <React.Fragment>
@@ -96,7 +96,7 @@ function AddItemForm({ onNewItem }) {
                     value={newItem}
                     onChange={e => setNewItem(e.target.value)}
                     type="text"
-                    placeholder="Что хочется сделать сегодня"
+                    placeholder="Написать.."
                     aria-describedby="basic-addon1"
                 />
                 <InputGroup.Append>
