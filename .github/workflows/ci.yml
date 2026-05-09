@@ -1,4 +1,4 @@
-
+---
 "on":
   push:
     branches: [pull-model, main]
@@ -96,11 +96,20 @@ jobs:
           sarif_file: 'trivy-results.sarif'
           category: "trivy-pull-latest"
 
-  Syncronization:
+  Update_manifest:
     needs: [Build_and_scan, Code_analysis]
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-      - name: ArgoCD sync
+      - uses: actions/checkout@v3
+        with:
+          ref: 'pull-model'
+      - name: Update_tag
         run: |
-          kubectl patch application todo-app -n argocd --type=merge \
-          -p '{"operation":{"sync":{"revision":"pull-model"}}}'
+          sed -i "s|image: imarcho/myapp:.*|image: imarcho/myapp:${{ github.sha }}|g" manifests/deployment.yaml
+      - name: Commit_and_push
+        run: |
+          git config --global user.name "Bot"
+          git config --global user.email "bot@email.com"
+          git add manifests/deployment.yaml
+          git commit -m "Update image to ${{ github.sha }}"
+          git push
