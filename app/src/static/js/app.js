@@ -96,7 +96,7 @@ function AddItemForm({ onNewItem }) {
                     value={newItem}
                     onChange={e => setNewItem(e.target.value)}
                     type="text"
-                    placeholder="Что хочется сделать сегодня?"
+                    placeholder="Что хочется сделать сегодня"
                     aria-describedby="basic-addon1"
                 />
                 <InputGroup.Append>
