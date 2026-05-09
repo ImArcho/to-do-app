@@ -1,0 +1,4 @@
+20:15:57
+todo-app-85f54d5b5d-5zjwr   todo-app   1m    25Mi   
+20:16:01
+todo-app-85f54d5b5d-5zjwr   todo-app   1m    25Mi   
