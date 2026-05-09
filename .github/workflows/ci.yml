@@ -99,10 +99,13 @@ jobs:
   Update_manifest:
     needs: [Build_and_scan, Code_analysis]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
         with:
           ref: 'manifest'
+          fetch-depth: 0
       - name: Update_tag
         run: |
           sed -i "s|image: imarcho/myapp:.*|image: imarcho/myapp:${{ github.sha }}|g" manifests/deployment.yaml
@@ -111,5 +114,11 @@ jobs:
           git config --global user.name "Bot"
           git config --global user.email "bot@email.com"
           git add manifests/deployment.yaml
-          git commit -m "Update image to ${{ github.sha }}"
-          git push
+
+          if git diff --staged --quiet
+          then
+            echo "Nothing to change"
+          else
+            git commit -m "Update image to ${{ github.sha }}"
+            git push
+          fi
