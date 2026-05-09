@@ -47,7 +47,7 @@ function TodoListCard() {
         [items],
     );
 
-    if (items === null) return 'Загрузка...';
+    if (items === null) return 'Загрузка';
 
     return (
         <React.Fragment>
