@@ -102,7 +102,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: 'pull-model'
+          ref: 'manifest'
       - name: Update_tag
         run: |
           sed -i "s|image: imarcho/myapp:.*|image: imarcho/myapp:${{ github.sha }}|g" manifests/deployment.yaml
