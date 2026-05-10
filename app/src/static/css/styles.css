@@ -1,13 +1,13 @@
 body {
-    background-color: #ffffff; 
-    margin-top: 70px;
-    font-family: 'serif';
+    background-color: #faqfff; 
+    margin-top: 60px;
+    font-family: 'Lato';
 }
 
 .item {
     background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
     border: transparent;
     border-radius: 5px;
     box-shadow: 0 0 1em #ccc;
