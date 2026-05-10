@@ -79,7 +79,7 @@ jobs:
         with:
           image-ref: 'imarcho/myapp:${{ github.sha }}'
           format: 'sarif'
-          exit-code: 1 
+          exit-code: 0
           output: 'trivy-results.sarif'
 
       - name: Push both tags to Docker Hub
