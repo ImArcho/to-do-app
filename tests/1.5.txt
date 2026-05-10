@@ -1,0 +1,96 @@
+15:53:12
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:15
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:18
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:21
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:24
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:28
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:31
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:34
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:37
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:41
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:44
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:47
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:50
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:53
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:53:57
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:00
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:04
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:07
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:10
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:13
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:16
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:19
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:23
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:26
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:29
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:32
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:35
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:38
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:41
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:45
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:48
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:51
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:54
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    50Mi   
+15:54:57
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:00
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:04
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:07
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:10
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:13
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:17
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:20
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:23
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:26
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:29
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:33
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:36
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:39
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
+15:55:42
+todo-app-7cb8d557c6-hqdg6   todo-app   1m    52Mi   
