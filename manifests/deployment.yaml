@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: imarcho/myapp:90051747065d38cc590ee19bc53845fd08c37903
+          image: imarcho/myapp:7233d88fa17efce081005a8e2c488c159ad66baf
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
