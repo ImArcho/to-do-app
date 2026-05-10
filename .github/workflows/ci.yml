@@ -104,7 +104,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: 'manifest'
+          ref: 'pull-model'
           fetch-depth: 0
       - name: Update_tag
         run: |
@@ -120,5 +120,5 @@ jobs:
             echo "Nothing to change"
           else
             git commit -m "Update image to ${{ github.sha }}"
-            git push origin manifest
+            git push
           fi
